@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.9
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -26,7 +26,3 @@ RUN apt-get update && apt-get install -y \
     zlib1g-dev
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Install and configure poetry
-RUN pip install poetry
-RUN poetry config virtualenvs.create false
